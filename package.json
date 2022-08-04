@@ -1,0 +1,26 @@
+{
+  "name": "rpp36-andrew-productoverview",
+  "version": "1.0.0",
+  "description": "api for product overview",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpp36-sdc-netbios/rpp36-andrew-productOverview.git"
+  },
+  "author": "asawadichai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rpp36-sdc-netbios/rpp36-andrew-productOverview/issues"
+  },
+  "homepage": "https://github.com/rpp36-sdc-netbios/rpp36-andrew-productOverview#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "jest": "^28.1.3"
+  }
+}
