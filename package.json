@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
   "homepage": "https://github.com/rpp36-sdc-netbios/rpp36-andrew-productOverview#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "jest": "^28.1.3"
+    "jest": "^28.1.3",
+    "pg": "^8.7.3",
+    "postgres": "^3.2.4"
   }
 }
