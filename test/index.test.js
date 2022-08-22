@@ -1,6 +1,6 @@
 //import db from '../database/index.js';
 
-const sum = require('../database/index.js');
+const server = require('../server/app.js');
 
 test('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3);
