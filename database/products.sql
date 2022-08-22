@@ -1,4 +1,10 @@
 \c postgres;
+DROP INDEX IF EXISTS idx_products_id;
+DROP INDEX IF EXISTS idx_features_product_id;
+DROP INDEX IF EXISTS idx_styles_productId;
+DROP INDEX IF EXISTS idx_photos_style_id;
+DROP INDEX IF EXISTS idx_related_current_product_id;
+DROP INDEX IF EXISTS idx_skus_styleId;
 DROP DATABASE IF EXISTS products;
 CREATE DATABASE products;
 \c products;
@@ -19,7 +25,7 @@ CREATE TABLE styles (
   name TEXT NOT NULL,
   sale_price TEXT,
   original_price TEXT NOT NULL,
-  default_style TEXT,
+  default_style BOOLEAN,
   FOREIGN KEY (productId)
     REFERENCES products (id)
 );
@@ -61,6 +67,13 @@ CREATE TABLE skus (
     REFERENCES styles (id)
 );
 COPY skus FROM '/Users/andrewsmacbook/Documents/GitHub/SDC/rpp36-andrew-productOverview/ETL/skus.csv' csv header;
+
+CREATE INDEX idx_products_id ON products(id);
+CREATE INDEX idx_features_product_id ON features(product_id);
+CREATE INDEX idx_styles_productId ON styles(productId);
+CREATE INDEX idx_photos_style_id ON photos(style_id);
+CREATE INDEX idx_related_current_product_id ON related(current_product_id);
+CREATE INDEX idx_skus_styleId ON skus(styleId);
 
 
 /*  Execute this file from the psql postgres cli
