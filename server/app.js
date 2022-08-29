@@ -6,8 +6,7 @@ const models = require('../models/index.js');
 const port = 8000;
 
 app.get('/', (req, res) => {
-  console.log("Get works!");
-  res.send("hello world");
+  res.send({data: 'hello world'});
 });
 
 // list of products
@@ -40,7 +39,6 @@ app.get('/products/:pId/styles', (req, res) => {
   console.log('incoming product style req', product_id);
   var result = Promise.resolve(models.productStyles(product_id));
   result.then((value) => {
-    console.log(value);
     res.send(value);
   });
 });
@@ -57,6 +55,8 @@ app.get('/products/:pId/related', (req, res) => {
   })
 });
 
-app.listen(port, () => {
-  console.log('listening on ' + port);
-})
+// app.listen(port, () => {
+//   console.log('listening on ' + port);
+// })
+
+module.exports = app;
